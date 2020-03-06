@@ -7,12 +7,7 @@ BASIC   PORTUGUESE   CONFIG (1.0)
   SEMANTICFUNCTIONS ADJ.
   CHARACTERENCODING utf-8.
 
-----
-BASIC   PORTUGUESE   TEMPLATES (1.0)	
-
-
-"Agreement in Português Culto"
-
+"Agreement patterns in popular and standard portuguese"
 
 ----
 
@@ -87,20 +82,6 @@ os 	  D * (^ GEN)=MAS
 	      (^ CONC NUM)=PL
 	      (^ INDEX NUM) = PL
 	      (^ SPEC)=DEF.
-
-
-"ADJECTIVES"
-
-belo    A * (^ PRED)='BELO<(^ SUBJ)>'
-	      (^ SUBJ GEN)=MAS
-	      (^ SUBJ NUM)=SG.
-	      
-
-belos 	  A * (^ PRED)='BELO<(^ SUBJ)>'
-	      (^ SUBJ GEN)=MAS
-	      (^ SUBJ NUM)=PL.
-	   	
-
 
 
 ----
