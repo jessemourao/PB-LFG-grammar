@@ -1,0 +1,106 @@
+BASIC   PORTUGUESE   CONFIG (1.0)
+  ROOTCAT   S. 
+  LEXENTRIES   (BASIC PORTUGUESE).
+  RULES   (BASIC PORTUGUESE).
+  TEMPLATES (BASIC PORTUGUESE).
+  GOVERNABLERELATIONS SUBJ OBJ OBJ2 OBL XCOMP.
+  SEMANTICFUNCTIONS ADJ.
+  CHARACTERENCODING utf-8.
+
+----
+BASIC   PORTUGUESE   TEMPLATES (1.0)	
+
+
+"Agreement in Português Culto"
+
+
+----
+
+BASIC   PORTUGUESE   RULES (1.0)
+
+   "R1"   S --> (NP: (^ SUBJ)=!) VP.	
+
+   "R2"   VP --> V' (NP: (^ OBJ)=!) (PP: { (^ XCOMP)=! | (^ OBJ2)=! | (^ OBL)=!}) (AP: (^ XCOMP)=!).
+   
+   "R3"   V' --> V.
+
+   "R4"   NP --> { (D) 
+ 	  (A: ! $ (^ ADJ) (^ PRED) = (! SUBJ PRED))
+ 	   N: ^=! (^ PERS)=3 | PRON }.
+
+   "R5"   PP --> { P NP: (^ OBJ)=! | PA N | P NP}.
+
+   "R6"	  AP --> A.
+
+----
+
+BASIC PORTUGUESE LEXICON (1.0)
+
+espera 	  V * { (^ PRED)='ESPERAR<(^ SUBJ)(^ OBJ)>' |
+		(^ PRED)='ESPERAR<(^ SUBJ)>'}
+		{(^ SUBJ CONC NUM)= SG |
+	   	(^ SUBJ INDEX NUM)}
+	   	(^ SUBJ PERS)=3.
+
+
+esperam V * { (^ PRED)='ESPERAR<(^ SUBJ)(^ OBJ)>' |
+		(^ PRED)='ESPERAR<(^ SUBJ)>'}
+	      (^ SUBJ PERS)=3
+	       {(^ SUBJ CONC NUM)=PL|
+	       (^ SUBJ INDEX NUM) =c PL}.
+	    
+
+cavaleiro N * (^ PRED)='CAVALEIRO'
+ 	      {(^ CONC NUM)= SG |
+	      (^ INDEX NUM)}
+	      (^ GEN)=MAS.  
+
+
+cavaleiros N * (^ PRED)='CAVALEIRO'
+	       (^ GEN)=MAS
+	       (^ CONC NUM)=PL
+	       (^ INDEX NUM) = PL
+	       (^ NUM)=PL.
+
+povo      N *  (^ PRED)='POVO'
+ 	        {(^ CONC NUM)= SG|
+	        (^ INDEX NUM)= PL}
+	        (^ GEN)=MAS.
+
+
+povos      N *  (^ PRED)='POVO'
+ 	        (^ CONC NUM)=PL
+	        (^ INDEX NUM) = PL
+	        (^ GEN)=MAS 
+	        (^ NUM) = PL. 
+
+
+	      
+"DETERMINERS"
+
+o 	  D * (^ GEN)=MAS
+	      (^ CONC NUM)=SG.
+	    
+	         
+
+os 	  D * (^ GEN)=MAS 
+	      (^ CONC NUM)=PL
+	      (^ INDEX NUM) = PL
+	      (^ SPEC)=DEF.
+
+
+"ADJECTIVES"
+
+belo    A * (^ PRED)='BELO<(^ SUBJ)>'
+	      (^ SUBJ GEN)=MAS
+	      (^ SUBJ NUM)=SG.
+	      
+
+belos 	  A * (^ PRED)='BELO<(^ SUBJ)>'
+	      (^ SUBJ GEN)=MAS
+	      (^ SUBJ NUM)=PL.
+	   	
+
+
+
+----
